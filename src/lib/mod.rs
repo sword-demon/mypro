@@ -1,3 +1,4 @@
+pub mod config; // config.rs 或者 config/mod.rs
 pub mod helper {
 	pub fn show_me() {
 		let my_name = "wujie";
