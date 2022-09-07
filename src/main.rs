@@ -15,6 +15,11 @@ fn add (i:i32)->i32 {
     i+1
 }
 
+fn filter(html:&str) {
+   for i in 1..=10  {
+       println!("{}", i);
+   }
+}
 fn main() {
     println!("user is {}", get_user(3));
 
@@ -23,4 +28,7 @@ fn main() {
     println!("{}", b);
 
     println!("{}", add(3));
+
+    let html = "abcd";
+    filter(html);
 }
