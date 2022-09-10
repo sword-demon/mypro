@@ -1,11 +1,25 @@
 // mod lib; // lib.rs 或者 lib/mod.rs
 
-fn change(s: &mut String) {
-   s.push_str("_19");
+#[derive(Debug)]
+struct User {
+   name: String,
+   age: u8,
+}
+
+impl User {
+    fn version(&self) {
+      println!("1.0");
+    }
+    fn to_string(&self)->String {
+      format!("我的名字是: {}, 我的年龄是: {}", &self.name, &self.age)
+    }
 }
 
 fn main() {
-   let mut name = String::from("abc");
-   change(&mut name);
-   println!("{}", name);
+   let me = User{
+       name: String::from("无解"),
+       age: 19
+   };
+   me.version();
+   println!("{:#?}", me);
 }
