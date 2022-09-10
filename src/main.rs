@@ -21,5 +21,12 @@ fn main() {
        age: 19
    };
    me.version();
+   me.to_string();
    println!("{:#?}", me);
+
+   let a = {
+    let inner = 2;
+    inner * inner
+  };
+  println!("a={}", a);
 }
