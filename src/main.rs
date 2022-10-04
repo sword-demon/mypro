@@ -29,4 +29,21 @@ fn main() {
     inner * inner
   };
   println!("a={}", a);
+
+  let tags = ["java", "php", "js"];
+  println!("{:#?}", tags);
+
+  for i in 0..tags.len()  { // range >=0 <3
+      println!("{:#?}", tags[i]);
+  }
+
+  for item in tags.iter() {
+    println!("{:#?}", item);
+  }
+
+  let mut cats:[u8;10] = [0;10];
+  for i in 0..cats.len() {
+      cats[i] = (i+1) as u8;
+  }
+  println!("{:#?}", cats);
 }
