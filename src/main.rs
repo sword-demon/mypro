@@ -46,4 +46,7 @@ fn main() {
       cats[i] = (i+1) as u8;
   }
   println!("{:#?}", cats);
+
+  let my:(&str, u8) = ("wujie", 19);
+  println!("{:#?}", my.0);
 }
