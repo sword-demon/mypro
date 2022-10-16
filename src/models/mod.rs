@@ -1,1 +1,1 @@
-pub mod UserModel;
+pub mod user_model;
