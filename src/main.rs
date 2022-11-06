@@ -4,16 +4,15 @@ mod models;
 // use api::Stock;
 // use models::book_model::*;
 
-fn max<'a>(a: &'a i32, b: &'a i32) -> &'a i32 {
-    if a > b {
-        a
-    } else {
-        b
-    }
+#[derive(Debug)]
+struct User<'a> {
+    id: &'a i32,
 }
 
 fn main() {
-    let a = 12;
-    let b = 21;
-    println!("最大值是: {}", max(&a, &b));
+    let mut id = 11;
+    let u = User { id: &id };
+    println!("{:?}", u);
+    id = 107;
+    println!("{:?}", id);
 }
