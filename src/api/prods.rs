@@ -28,3 +28,12 @@ impl Prods for Phone {
         &self.price + 20.0
     }
 }
+
+impl std::ops::Add<Book> for Book {
+    // 定义输出类型是什么
+    type Output = f32;
+    // 实现加法 A, B B的类型为对应的book类型
+    fn add(self, rhs: Book) -> f32 {
+        self.get_price() + rhs.get_price()
+    }
+}

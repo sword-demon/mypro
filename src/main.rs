@@ -4,15 +4,18 @@ use api::Prods;
 use api::Stock;
 use models::book_model::*;
 
-fn show_detail<T>(p: T)
-where
-    T: Prods + Stock,
-{
-    println!("商品的库存是: {}", p.get_stock());
+fn sum(p1: Book, p2: Book) {
+    println!(
+        "p1的价格是: {}, p2的价格是: {}, 商品总价是: {}",
+        p1.get_price(),
+        p2.get_price(),
+        p1 + p2
+    );
 }
 
 fn main() {
     // 需要指明具体的类型
     let book1: Book = Prods::new(101, 25.6);
-    show_detail(book1);
+    let book2: Book = Prods::new(110, 30.5);
+    sum(book1, book2);
 }
