@@ -4,15 +4,11 @@ mod models;
 // use api::Stock;
 // use models::book_model::*;
 
-#[derive(Debug)]
-struct User<'a> {
-    id: &'a i32,
+fn show_name<'a>(name: &'a str) -> &'a str {
+    name
 }
 
 fn main() {
-    let mut id = 11;
-    let u = User { id: &id };
-    println!("{:?}", u);
-    id = 107;
-    println!("{:?}", id);
+    let name = "lisi";
+    show_name(name);
 }
