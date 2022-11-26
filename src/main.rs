@@ -14,4 +14,13 @@ fn main() {
         *i = *i + 10
     }
     println!("{:?}", tags);
+
+    let a = "hello";
+    let b = "wujie";
+
+    let c = |msg: &str| {
+        println!("{} {}: {}", a, b, msg);
+    };
+
+    c("how are you?");
 }
