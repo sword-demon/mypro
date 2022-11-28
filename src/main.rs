@@ -3,24 +3,23 @@ mod models;
 // use api::Prods;
 // use api::Stock;
 // use models::book_model::*;
-
+#[derive(Debug)]
+enum Sex {
+    Male(String, i32),
+    Female(String, i32),
+}
+#[derive(Debug)]
+struct User {
+    id: i32,
+    sex: Sex,
+}
 fn main() {
-    let mut tags = Vec::new();
-    tags.push(1);
-    tags.push(2);
-    // 左闭右开区间
-    for i in &mut tags {
-        // 解引用
-        *i = *i + 10
-    }
-    println!("{:?}", tags);
+    println!("{:?}", Sex::Male(String::from("男"), 1));
+    println!("{:?}", Sex::Female(String::from("女"), 0));
 
-    let a = "hello";
-    let b = "wujie";
-
-    let c = |msg: &str| {
-        println!("{} {}: {}", a, b, msg);
+    let u = User {
+        id: 101,
+        sex: Sex::Female(String::from("女"), 0),
     };
-
-    c("how are you?");
+    println!("{:?}", u)
 }
