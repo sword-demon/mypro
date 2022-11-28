@@ -5,27 +5,28 @@ mod models;
 // use models::book_model::*;
 #[derive(Debug)]
 enum Sex {
-    Male,
-    Female,
+    Male(String),
+    Female(String),
 }
 #[derive(Debug)]
 struct User {
     id: i32,
-    sex: Sex,
+    sex: Option<String>,
 }
 
 fn check(u: User) {
-    if let Sex::Male = u.sex {
-        println!("男性");
-    } else {
-        println!("女性")
-    }
+    println!("{}", u.sex.unwrap());
+    // if let Some(s) = u.sex {
+    // println!("{}", s);
+    // } else {
+    // println!("女性")
+    // }
 }
 
 fn main() {
     let u = User {
         id: 101,
-        sex: Sex::Female,
+        sex: Some(String::from("女")),
     };
     println!("{:?}", u);
     check(u);
