@@ -5,21 +5,31 @@ mod models;
 // use models::book_model::*;
 #[derive(Debug)]
 enum Sex {
-    Male(String, i32),
-    Female(String, i32),
+    Male,
+    Female,
 }
 #[derive(Debug)]
 struct User {
     id: i32,
     sex: Sex,
 }
-fn main() {
-    println!("{:?}", Sex::Male(String::from("男"), 1));
-    println!("{:?}", Sex::Female(String::from("女"), 0));
 
+fn check(u: User) {
+    match u.sex {
+        Sex::Male => {
+            println!("{}", "男性");
+        }
+        Sex::Female => {
+            println!("{}", "女性");
+        }
+    }
+}
+
+fn main() {
     let u = User {
         id: 101,
-        sex: Sex::Female(String::from("女"), 0),
+        sex: Sex::Female,
     };
-    println!("{:?}", u)
+    println!("{:?}", u);
+    check(u);
 }
