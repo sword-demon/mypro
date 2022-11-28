@@ -15,13 +15,10 @@ struct User {
 }
 
 fn check(u: User) {
-    match u.sex {
-        Sex::Male => {
-            println!("{}", "男性");
-        }
-        Sex::Female => {
-            println!("{}", "女性");
-        }
+    if let Sex::Male = u.sex {
+        println!("男性");
+    } else {
+        println!("女性")
     }
 }
 
